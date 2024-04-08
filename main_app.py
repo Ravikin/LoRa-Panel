@@ -35,13 +35,13 @@ col3.metric(label="Battery Voltage", value=volt1)
 
 
 link = baseUrlDev+devices[2]+"/packages/storage/"+types[1]+"?limit=1"
-r = requests.get(link,headers=headers)
+r2 = requests.get(link,headers=headers)
 
-jsonObj = json.loads(r.text)
+jsonObj2 = json.loads(r2.text)
 
-temp2 = jsonObj["result"]["uplink_message"]["decoded_payload"]["temp"]
-humi2 = jsonObj["result"]["uplink_message"]["decoded_payload"]["humi"]
-volt2 = jsonObj["result"]["uplink_message"]["decoded_payload"]["volt"]
+temp2 = jsonObj2["result"]["uplink_message"]["decoded_payload"]["temp"]
+humi2 = jsonObj2["result"]["uplink_message"]["decoded_payload"]["humi"]
+volt2 = jsonObj2["result"]["uplink_message"]["decoded_payload"]["volt"]
 
 st.subheader(str(devices[2]))
 col1, col2, col3 = st.columns(3)
@@ -50,12 +50,12 @@ col2.metric(label="Humidity", value=humi2)
 col3.metric(label="Battery Voltage", value=volt2)
 
 link = baseUrlDev+devices[0]+"/packages/storage/"+types[1]+"?limit=1"
-r = requests.get(link,headers=headers)
+r0 = requests.get(link,headers=headers)
 
-jsonObj = json.loads(r.text)
+jsonObj0 = json.loads(r0.text)
 
-temp0 = jsonObj["result"]["uplink_message"]["decoded_payload"]["temp"]
-humi0 = jsonObj["result"]["uplink_message"]["decoded_payload"]["humi"]
+temp0 = jsonObj0["result"]["uplink_message"]["decoded_payload"]["temp"]
+humi0 = jsonObj0["result"]["uplink_message"]["decoded_payload"]["humi"]
 volt0 = "∞"
 
 st.subheader(str(devices[0]))
