@@ -1,9 +1,7 @@
 import streamlit as st
 import requests
 import json
-import pandas as pd
-import numpy as np
-import folium
+
 
 headers = {'Accept': 'application/json', 'Authorization':'Bearer NNSXS.KNEAMVSK4GGOAJ6ZQT5GF4GI44WFDHG6BMGLOZQ.COQXVOSUBLBX7HGVTYWXNZYODOV3V5O2Z5SSSUJES6CFWEP5JCHQ'}
 devices = ["eui-2cf7f1205100a1e0","eui-mkrwan1310-1-a861","eui-a8610a3438306602","eui-2cf7f1205100b6a2-uno-main"]
