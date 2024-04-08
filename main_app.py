@@ -69,8 +69,8 @@ data = {
     'Location': ["eui-2cf7f1205100a1e0", "eui-mkrwan1310-1-a861", "eui-a8610a3438306602"],
     'latitude': [52.3632418, 52.3634742, 52.3622212],
     'longitude': [21.0507091, 21.0505278, 21.0497551],
-    'Humidity (%)': [70, 80, 65],
-    'Temperature (°C)': [25, 28, 23]
+    'Humidity': [70, 80, 65],
+    'Temperature': [25, 28, 23]
 }
 
 df = pd.DataFrame(data)
@@ -81,8 +81,8 @@ selected_point = st.sidebar.selectbox('Select a point:', df['Location'])
 selected_data = df[df['Location'] == selected_point].iloc[0]
 st.sidebar.write(f"latitude: {selected_data['latitude']}")
 st.sidebar.write(f"longitude: {selected_data['longitude']}")
-st.sidebar.write(f"Humidity: {selected_data['Humidity (%)']}%")
-st.sidebar.write(f"Temperature: {selected_data['Temperature (°C)']}°C")
+st.sidebar.write(f"Humidity: {selected_data['Humidity']}%")
+st.sidebar.write(f"Temperature: {selected_data['Temperature']}°C")
 
 st.header('DBG')
 st.code(df)
@@ -92,5 +92,5 @@ st.header('Map with Points')
 st.map(df,
     latitude='latitude',
     longitude='longitude',
-    size='Temperature (°C)')
+    size='Temperature')
 
