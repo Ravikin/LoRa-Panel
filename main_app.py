@@ -67,8 +67,8 @@ col3.metric(label="Battery Voltage", value=volt0)
 
 data = {
     'Location': ["eui-2cf7f1205100a1e0", "eui-mkrwan1310-1-a861", "eui-a8610a3438306602"],
-    'latitude': [52.3632418, 52.3634742, 52.3622212],
-    'longitude': [21.0507091, 21.0505278, 21.0497551],
+    'latitude': [52.3639741, 52.3634742, 52.3622212],
+    'longitude': [21.0535907, 21.0505278, 21.0497551],
     'Humidity': [humi0, humi1, humi2],
     'Temperature': [temp0, temp1, temp2],
     'Size':  [temp0, temp1, temp2]
