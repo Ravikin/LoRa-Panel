@@ -97,7 +97,7 @@ def get_color(temperature):
     b = 0
     return f'#{r:02x}{g:02x}{b:02x}'
 
-df['Color'] = df['Temperature (°C)'].apply(get_color)
+df['Color'] = df['Temperature'].apply(get_color)
 
 st.header('Map with Points')
 st.map(df,
