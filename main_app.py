@@ -16,7 +16,7 @@ limit = str(1)
 
 
 # link = "https://eu1.cloud.thethings.network/api/v3/as/applications/ravikin-test-app/packages/storage/uplink_normalized?limit="+limit+"?last=10m"
-link = baseUrlDev+devices[1]+"/packages/storage/"+types[0]+"?last=10m"
+link = baseUrlDev+devices[1]+"/packages/storage/"+types[1]+"?last=10m"
 r = requests.get(link,headers=headers)
 
 jsonObj = json.loads(r.text)
