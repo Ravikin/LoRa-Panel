@@ -90,7 +90,7 @@ st.code(df[['latitude', 'longitude']].values)
 
 def get_color(temperature):
     # Normalize temperature between 0 and 1
-    normalized_temperature = (temperature - df['Temperature (°C)'].min()) / (df['Temperature (°C)'].max() - df['Temperature (°C)'].min())
+    normalized_temperature = (temperature - df['Temperature'].min()) / (df['Temperature'].max() - df['Temperature'].min())
     # Interpolate between green and red
     r = int(np.interp(normalized_temperature, [0, 1], [0, 255]))
     g = int(np.interp(normalized_temperature, [0, 1], [255, 0]))
