@@ -70,7 +70,8 @@ data = {
     'latitude': [52.3632418, 52.3634742, 52.3622212],
     'longitude': [21.0507091, 21.0505278, 21.0497551],
     'Humidity': [70, 80, 65],
-    'Temperature': [25, 28, 23]
+    'Temperature': [25, 28, 23],
+    'Size':  [40, 60, 30]
 }
 
 df = pd.DataFrame(data)
@@ -103,6 +104,6 @@ st.header('Map with Points')
 st.map(df,
     latitude='latitude',
     longitude='longitude',
-    size='temperature'*4,
+    size='Size',
     color='Color')
 
