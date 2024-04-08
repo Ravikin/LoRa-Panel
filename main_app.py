@@ -69,8 +69,8 @@ data = {
     'Location': ["eui-2cf7f1205100a1e0", "eui-mkrwan1310-1-a861", "eui-a8610a3438306602"],
     'latitude': [52.3632418, 52.3634742, 52.3622212],
     'longitude': [21.0507091, 21.0505278, 21.0497551],
-    'Humidity': [70, 80, 65],
-    'Temperature': [25, 28, 23],
+    'Humidity': [humi0, humi1, humi2],
+    'Temperature': [temp0, temp1, temp2],
     'Size':  [25, 40, 20]
 }
 
@@ -85,9 +85,6 @@ st.sidebar.write(f"longitude: {selected_data['longitude']}")
 st.sidebar.write(f"Humidity: {selected_data['Humidity']}%")
 st.sidebar.write(f"Temperature: {selected_data['Temperature']}°C")
 
-st.header('DBG')
-st.code(df)
-st.code(df[['latitude', 'longitude']].values)
 
 def get_color(temperature):
     # Normalize temperature between 0 and 1
