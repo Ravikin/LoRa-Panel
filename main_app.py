@@ -27,13 +27,11 @@ volt1 = jsonObj["result"]["uplink_message"]["decoded_payload"]["volt"]
 rec1 =  jsonObj["result"]["received_at"]
 
 st.header("LoRa Sensor Data")
-st.subheader(str(devices[1]))
+st.subheader(str(devices[1]+" "+rec1))
 col1, col2, col3 = st.columns(3)
 col1.metric(label="Temperature", value=temp1)
 col2.metric(label="Humidity", value=humi1)
 col3.metric(label="Battery Voltage", value=volt1)
-st.metric(label="Last Seen", value=rec1)
-
 
 
 link = baseUrlDev+devices[2]+"/packages/storage/"+types[1]+"?limit=1"
@@ -46,12 +44,11 @@ humi2 = jsonObj2["result"]["uplink_message"]["decoded_payload"]["humi"]
 volt2 = jsonObj2["result"]["uplink_message"]["decoded_payload"]["volt"]
 rec2 =  jsonObj2["result"]["received_at"]
 
-st.subheader(str(devices[2]))
+st.subheader(str(devices[2]+" "+rec2))
 col1, col2, col3 = st.columns(3)
 col1.metric(label="Temperature", value=temp2)
 col2.metric(label="Humidity", value=humi2)
 col3.metric(label="Battery Voltage", value=volt2)
-st.metric(label="Last Seen", value=rec2)
 
 link = baseUrlDev+devices[0]+"/packages/storage/"+types[1]+"?limit=1"
 r0 = requests.get(link,headers=headers)
@@ -64,12 +61,11 @@ volt0 = "∞"
 rec0 =  jsonObj0["result"]["received_at"]
 
 
-st.subheader(str(devices[0]))
+st.subheader(str(devices[0]+" "+rec0))
 col1, col2, col3 = st.columns(3)
 col1.metric(label="Temperature", value=temp0)
 col2.metric(label="Humidity", value=humi0)
 col3.metric(label="Battery Voltage", value=volt0)
-st.metric(label="Last Seen", value=rec0)
 
 
 data = {
