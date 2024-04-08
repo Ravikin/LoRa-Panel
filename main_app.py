@@ -16,7 +16,7 @@ limit = str(1)
 
 
 # link = "https://eu1.cloud.thethings.network/api/v3/as/applications/ravikin-test-app/packages/storage/uplink_normalized?limit="+limit+"?last=10m"
-link = baseUrlDev+devices[1]+"/packages/storage/"+types[1]+"?limit=1"
+link = baseUrlDev+devices[1]+"/packages/storage/"+types[1]+"?limit=1"+"?last=10m"
 r = requests.get(link,headers=headers)
 
 jsonObj = json.loads(r.text)
@@ -34,7 +34,7 @@ col2.metric(label="Humidity", value=humi1)
 col3.metric(label="Battery Voltage", value=volt1)
 
 
-link = baseUrlDev+devices[2]+"/packages/storage/"+types[1]+"?limit=1"
+link = baseUrlDev+devices[2]+"/packages/storage/"+types[1]+"?limit=1"+"?last=10m"
 r2 = requests.get(link,headers=headers)
 
 jsonObj2 = json.loads(r2.text)
@@ -50,7 +50,7 @@ col1.metric(label="Temperature", value=temp2)
 col2.metric(label="Humidity", value=humi2)
 col3.metric(label="Battery Voltage", value=volt2)
 
-link = baseUrlDev+devices[0]+"/packages/storage/"+types[1]+"?limit=1"
+link = baseUrlDev+devices[0]+"/packages/storage/"+types[1]+"?limit=1"+"?last=10m"
 r0 = requests.get(link,headers=headers)
 
 jsonObj0 = json.loads(r0.text)
