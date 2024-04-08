@@ -103,6 +103,6 @@ st.header('Map with Points')
 st.map(df,
     latitude='latitude',
     longitude='longitude',
-    size='temperature'*2,
+    size='temperature'*4,
     color='Color')
 
