@@ -67,8 +67,8 @@ col3.metric(label="Battery Voltage", value=volt0)
 
 data = {
     'Location': ["eui-2cf7f1205100a1e0", "eui-mkrwan1310-1-a861", "eui-a8610a3438306602"],
-    'LATITUDE': [52.3634621, 52.3634621, 52.3634621],
-    'LONGITUDE': [52.3634621, 52.3634621, 52.3634621],
+    'latitude': [52.3634621, 52.3634621, 52.3634621],
+    'longitude': [52.3634621, 52.3634621, 52.3634621],
     'Humidity (%)': [70, 80, 65],
     'Temperature (°C)': [25, 28, 23]
 }
@@ -79,15 +79,15 @@ df = pd.DataFrame(data)
 st.sidebar.header('Input Parameters')
 selected_point = st.sidebar.selectbox('Select a point:', df['Location'])
 selected_data = df[df['Location'] == selected_point].iloc[0]
-st.sidebar.write(f"LATITUDE: {selected_data['LATITUDE']}")
-st.sidebar.write(f"LONGITUDE: {selected_data['LONGITUDE']}")
+st.sidebar.write(f"latitude: {selected_data['latitude']}")
+st.sidebar.write(f"longitude: {selected_data['longitude']}")
 st.sidebar.write(f"Humidity: {selected_data['Humidity (%)']}%")
 st.sidebar.write(f"Temperature: {selected_data['Temperature (°C)']}°C")
 
 st.header('DBG')
 st.code(df)
-st.code(df[['LATITUDE', 'LONGITUDE']].values)
+st.code(df[['latitude', 'longitude']].values)
 
 st.header('Map with Points')
-st.map(df[['LATITUDE', 'LONGITUDE']].values)
+st.map(df[['latitude', 'longitude']].values)
 
