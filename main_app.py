@@ -15,7 +15,7 @@ baseUrlDev="https://eu1.cloud.thethings.network/api/v3/as/applications/ravikin-t
 limit = str(1)
 
 
-# link = "https://eu1.cloud.thethings.network/api/v3/as/applications/ravikin-test-app/packages/storage/uplink_normalized?limit="+limit
+# link = "https://eu1.cloud.thethings.network/api/v3/as/applications/ravikin-test-app/packages/storage/uplink_normalized?limit="+limit+"?last=10m"
 link = baseUrlDev+devices[1]+"/packages/storage/"+types[1]+"?limit=1"
 r = requests.get(link,headers=headers)
 
