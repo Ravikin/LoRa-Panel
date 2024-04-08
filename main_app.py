@@ -91,5 +91,6 @@ st.code(df[['latitude', 'longitude']].values)
 st.header('Map with Points')
 st.map(df,
     latitude='latitude',
-    longitude='longitude')
+    longitude='longitude',
+    size='Temperature (°C)')
 
