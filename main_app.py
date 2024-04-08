@@ -90,8 +90,8 @@ def get_color(temperature):
     # Normalize temperature between 0 and 1
     normalized_temperature = (temperature - df['Temperature'].min()) / (df['Temperature'].max() - df['Temperature'].min())
     # Interpolate between green and red
-    r = int(np.interp(normalized_temperature, [0, 1], [0, 255]))
-    g = int(np.interp(normalized_temperature, [0, 1], [255, 0]))
+    r = int(np.interp(normalized_temperature, [0, 100], [0, 255]))
+    g = int(np.interp(normalized_temperature, [0, 100], [255, 0]))
     b = 0
     return f'#{r:02x}{g:02x}{b:02x}'
 
