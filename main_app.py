@@ -75,12 +75,6 @@ data = {
 
 df = pd.DataFrame(data)
 
-st.map(df,
-    latitude='Latitude',
-    longitude='Longitude',
-    size='Humidity (%)',
-    color='Temperature (°C)')
-
 # Sidebar inputs
 st.sidebar.header('Input Parameters')
 selected_point = st.sidebar.selectbox('Select a point:', df['Location'])
@@ -89,3 +83,6 @@ st.sidebar.write(f"Latitude: {selected_data['Latitude']}")
 st.sidebar.write(f"Longitude: {selected_data['Longitude']}")
 st.sidebar.write(f"Humidity: {selected_data['Humidity (%)']}%")
 st.sidebar.write(f"Temperature: {selected_data['Temperature (°C)']}°C")
+
+st.header('Map with Points')
+st.map(df[['Latitude', 'Longitude']].values)
