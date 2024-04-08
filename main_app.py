@@ -60,20 +60,26 @@ volt0 = "∞"
 
 st.subheader(str(devices[0]))
 col1, col2, col3 = st.columns(3)
-col1.metric(label="Temperature", value=temp0)
-col2.metric(label="Humidity", value=humi0)
-col3.metric(label="Battery Voltage", value=volt0)
+col1.metric(label="Temperature", value=temp)
+col2.metric(label="Humidity", value=humi)
+col3.metric(label="Battery Voltage", value=volt)
 
 
 data = {
-    'Location': [str(devices[0]), str(devices[1]), str(devices[2])],
+    'Location': [devices[0], devices[1], devices[2]],
     'Latitude': [52.3634621, 52.3634621, 52.3634621],
     'Longitude': [52.3634621, 52.3634621, 52.3634621],
-    'Humidity (%)': [humi0, humi1, humi2],
-    'Temperature (°C)': [temp0, temp1, temp2]
+    'Humidity (%)': [70, 80, 65],
+    'Temperature (°C)': [25, 28, 23]
 }
 
 df = pd.DataFrame(data)
+
+st.map(df,
+    latitude='Latitude',
+    longitude='Longitude',
+    size='Humidity (%)',
+    color='Temperature (°C)')
 
 # Sidebar inputs
 st.sidebar.header('Input Parameters')
@@ -83,7 +89,3 @@ st.sidebar.write(f"Latitude: {selected_data['Latitude']}")
 st.sidebar.write(f"Longitude: {selected_data['Longitude']}")
 st.sidebar.write(f"Humidity: {selected_data['Humidity (%)']}%")
 st.sidebar.write(f"Temperature: {selected_data['Temperature (°C)']}°C")
-
-# Display the map
-st.header('Map with Points')
-st.map(df[['Latitude', 'Longitude']].values)
