@@ -4,7 +4,7 @@ import json
 
 token = st.text_input("Bearer Token")
 bearer = "Bearer "+str(token)
-headers = {'Accept': 'application/json', 'Authorization':Bearer}
+headers = {'Accept': 'application/json', 'Authorization':bearer}
 devices = ["eui-2cf7f1205100a1e0","eui-mkrwan1310-1-a861","eui-a8610a3438306602","eui-2cf7f1205100b6a2-uno-main"]
 types =  [ "uplink_message", "uplink_normalized", "join_accept", "downlink_ack", "downlink_nack", "downlink_sent", "downlink_failed", "downlink_queued", "downlink_queue_invalidated", "location_solved", "service_data"]
 baseUrlAll="https://eu1.cloud.thethings.network/api/v3/as/applications/ravikin-test-app/packages/storage/{type}"
