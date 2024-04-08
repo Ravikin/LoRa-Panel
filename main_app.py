@@ -71,7 +71,7 @@ data = {
     'longitude': [21.0507091, 21.0505278, 21.0497551],
     'Humidity': [70, 80, 65],
     'Temperature': [25, 28, 23],
-    'Size':  [40, 60, 30]
+    'Size':  [25, 40, 20]
 }
 
 df = pd.DataFrame(data)
