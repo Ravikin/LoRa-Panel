@@ -86,6 +86,7 @@ st.sidebar.write(f"Temperature: {selected_data['Temperature (°C)']}°C")
 
 st.header('DBG')
 st.code(df)
+st.code(df[['Latitude', 'Longitude']].values)
 
 st.header('Map with Points')
 st.map(df[['Latitude', 'Longitude']].values)
