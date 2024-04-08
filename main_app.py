@@ -70,7 +70,9 @@ data = {
     'latitude': [52.3632418, 52.3634742, 52.3622212],
     'longitude': [21.0507091, 21.0505278, 21.0497551],
     'Humidity (%)': [70, 80, 65],
-    'Temperature (°C)': [25, 28, 23]
+    'Temperature (°C)': [25, 28, 23],
+    'size':np.random.randn(1000) * 100,
+    'color':np.random.rand(1000, 4).tolist()
 }
 
 df = pd.DataFrame(data)
@@ -92,6 +94,6 @@ st.header('Map with Points')
 st.map(df,
     latitude='latitude',
     longitude='longitude',
-    size='Humidity (%)',
-    color='Temperature (°C)')
+    size='size',
+    color='color')
 
