@@ -28,7 +28,7 @@ rec1 =  jsonObj["result"]["received_at"]
 
 st.header("LoRa Sensor Data")
 st.subheader(str(devices[1]))
-col1, col2, col3, col4 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 col1.metric(label="Temperature", value=temp1)
 col2.metric(label="Humidity", value=humi1)
 col3.metric(label="Battery Voltage", value=volt1)
@@ -47,7 +47,7 @@ volt2 = jsonObj2["result"]["uplink_message"]["decoded_payload"]["volt"]
 rec2 =  jsonObj2["result"]["received_at"]
 
 st.subheader(str(devices[2]))
-col1, col2, col3, col4 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 col1.metric(label="Temperature", value=temp2)
 col2.metric(label="Humidity", value=humi2)
 col3.metric(label="Battery Voltage", value=volt2)
@@ -65,7 +65,7 @@ rec0 =  jsonObj0["result"]["received_at"]
 
 
 st.subheader(str(devices[0]))
-col1, col2, col3, col4 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 col1.metric(label="Temperature", value=temp0)
 col2.metric(label="Humidity", value=humi0)
 col3.metric(label="Battery Voltage", value=volt0)
