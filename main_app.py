@@ -60,9 +60,9 @@ volt0 = "∞"
 
 st.subheader(str(devices[0]))
 col1, col2, col3 = st.columns(3)
-col1.metric(label="Temperature", value=temp)
-col2.metric(label="Humidity", value=humi)
-col3.metric(label="Battery Voltage", value=volt)
+col1.metric(label="Temperature", value=temp0)
+col2.metric(label="Humidity", value=humi0)
+col3.metric(label="Battery Voltage", value=volt0)
 
 
 data = {
