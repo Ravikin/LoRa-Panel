@@ -23,3 +23,7 @@ temp = jsonObj["result"]["uplink_message"]["decoded_payload"]["temp"]
 humi = jsonObj["result"]["uplink_message"]["decoded_payload"]["humi"]
 volt = jsonObj["result"]["uplink_message"]["decoded_payload"]["volt"]
 
+st.header("LoRa Sensor Data")
+st.metric(label="Temperature", value=temp)
+st.metric(label="Humidity", value=humi)
+st.metric(label="Battery Voltage", value=volt)
