@@ -53,8 +53,10 @@ jsonObj = json.loads(r.text)
 
 temp = jsonObj["result"]["uplink_message"]["decoded_payload"]["temp"]
 humi = jsonObj["result"]["uplink_message"]["decoded_payload"]["humi"]
+volt = "∞"
 
 st.subheader(str(devices[0]))
 col1, col2, col3 = st.columns(3)
 col1.metric(label="Temperature", value=temp)
 col2.metric(label="Humidity", value=humi)
+col3.metric(label="Battery Voltage", value=volt)
