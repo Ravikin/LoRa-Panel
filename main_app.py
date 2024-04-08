@@ -2,6 +2,9 @@ import streamlit as st
 import requests
 import json
 
+import pandas as pd
+import numpy as np
+
 token = st.text_input("Bearer Token")
 bearer = "Bearer "+str(token)
 headers = {'Accept': 'application/json', 'Authorization':bearer}
@@ -60,3 +63,10 @@ col1, col2, col3 = st.columns(3)
 col1.metric(label="Temperature", value=temp)
 col2.metric(label="Humidity", value=humi)
 col3.metric(label="Battery Voltage", value=volt)
+
+
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
+
+st.map(df)
