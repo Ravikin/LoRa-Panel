@@ -19,7 +19,7 @@ limit = str(1)
 link = baseUrlDev+devices[1]+"/packages/storage/"+types[1]+"?last=10m"
 r = requests.get(link,headers=headers)
 
-jsonObj = json.loads(r.text)
+jsonObj = r.json()
 
 temp1 = jsonObj["result"]["uplink_message"]["decoded_payload"]["temp"]
 humi1 = jsonObj["result"]["uplink_message"]["decoded_payload"]["humi"]
